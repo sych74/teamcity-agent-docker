@@ -10,8 +10,8 @@ if [ ! -d "$AGENT_DIR/bin" ]; then
     until curl -s -f -I -X GET $TEAMCITY_SERVER/update/buildAgent.zip; do
         let waiting+=3
         sleep 3
-        if [ $waiting -eq 120 ]; then
-            echo "Teamcity server did not respond within 120 seconds"...
+        if [ $waiting -eq 300 ]; then
+            echo "Teamcity server did not respond within 300 seconds"...
             exit 42
         fi
     done
